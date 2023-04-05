@@ -26,13 +26,13 @@ class DataTransformation:
         Function responsible for data transformation
         '''
         try:
-            numerical_columns = ['writing score', 'reading score']
+            numerical_columns = ['writing_score', 'reading_score']
             categorical_columns = [
                 'gender',
-                'race/ethnicity',
-                'parental level of education',
+                'race_ethnicity',
+                'parental_level_of_education',
                 'lunch',
-                'test preparation course'
+                'test_preparation_course'
             ]
 
             numerical_pipeline = Pipeline(
@@ -78,8 +78,7 @@ class DataTransformation:
             logging.info('Obtaining preprocessing object')
             preprocessor_obj = self.get_data_transformer_obj()
 
-            target_column_name = "math score"
-            numerical_columns = ["writing score", "reading score"]
+            target_column_name = "math_score"
 
             input_feature_train_df = train_df.drop(columns = [target_column_name], axis = 1)
             target_feature_train_df = train_df[target_column_name]
